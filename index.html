@@ -6,7 +6,6 @@
     <title>Freaky Text Generator</title>
     
     <style>
-        /* Основные стили */
         body {
             font-family: Arial, sans-serif;
             max-width: 600px;
@@ -33,7 +32,6 @@
             margin: 30px 0 10px;
         }
 
-        /* Контейнер элементов формы */
         .container {
             background: #f8f8f8;
             padding: 20px;
@@ -41,7 +39,6 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* Элементы формы */
         label {
             display: block;
             font-size: 15px;
@@ -69,7 +66,6 @@
             color: #999;
         }
 
-        /* Кнопка */
         button {
             background-color: #4CAF50;
             color: white;
@@ -122,7 +118,7 @@
     </main>
 
     <footer>
-        <h3>Created by Voxicurse & NERO</h3>
+        <h3>Website by Voxicurse & NERO</h3>
     </footer>
 
     <script>
@@ -134,17 +130,14 @@
             for (let word of words) {
                 if (word.length === 0) continue;
                 
-                // Добавление префиксов
                 if (Math.random() < 0.5) {
                     word = `${word[0]}-${word.toLowerCase()}`;
                 }
                 
-                // Добавление окончаний с многоточием
                 if (Math.random() < 0.33) {
                     word += Math.random() < 0.5 ? '...' : '..';
                 }
                 
-                // Добавление тильд
                 if (Math.random() < 0.33) {
                     word += Math.random() < 0.5 ? '~' : '~~';
                 }
