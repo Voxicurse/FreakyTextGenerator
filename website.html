@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freaky Text Generator</title>
+    
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin: 20px 0;
+            line-height: 1.3;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin: 15px 0;
+            color: #333;
+        }
+        
+        h3 {
+            font-size: 14px;
+            color: #666;
+            margin: 30px 0 10px;
+        }
+
+        /* Контейнер элементов формы */
+        .container {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Элементы формы */
+        label {
+            display: block;
+            font-size: 15px;
+            margin: 15px 0 5px;
+            color: #444;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        
+        input::placeholder {
+            color: #999;
+        }
+
+        /* Кнопка */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px 0;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Voxicurse's<br>Cool Stuff</h1>
+        <h2>Freaky Text Generator</h2>
+    </header>
+
+    <main>
+        <div class="container">
+            <label for="textInput">Your text here:</label>
+            <input 
+                type="text" 
+                id="textInput" 
+                placeholder="Type something awesome..."
+                autocomplete="off"
+            >
+            
+            <label for="textOutput">Result:</label>
+            <input 
+                type="text" 
+                id="textOutput" 
+                readonly
+                class="result-output"
+            >
+            
+            <button id="convertButton">
+                Transform Text
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Created by Voxicurse & NERO</h3>
+    </footer>
+
+    <script>
+        document.getElementById('convertButton').addEventListener('click', function() {
+            const text = document.getElementById('textInput').value;
+            const words = text.split(' ');
+            const convertedWords = [];
+            
+            for (let word of words) {
+                if (word.length === 0) continue;
+                
+                // Добавление префиксов
+                if (Math.random() < 0.5) {
+                    word = `${word[0]}-${word.toLowerCase()}`;
+                }
+                
+                // Добавление окончаний с многоточием
+                if (Math.random() < 0.33) {
+                    word += Math.random() < 0.5 ? '...' : '..';
+                }
+                
+                // Добавление тильд
+                if (Math.random() < 0.33) {
+                    word += Math.random() < 0.5 ? '~' : '~~';
+                }
+                
+                convertedWords.push(word);
+            }
+            
+            document.getElementById('textOutput').value = convertedWords.join(' ');
+        });
+    </script>
+</body>
+</html>
