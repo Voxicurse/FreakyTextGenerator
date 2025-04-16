@@ -4,7 +4,7 @@ const copyButton = document.getElementById('copyButton');
 
 const freakyDecorations = {
   shyness: ['~', '~~', '...', '..', '👉👈', '>///<', '>_<'],
-  emphasis: ['!', '!!', '!?', '?!'],
+  emphasis: ['!', '!!', '!?', '?!', '..'],
   kawaii: ['✨', '💕', '🌸', '🎀', '💫', '✿', '💖', '🌟']
 };
 
