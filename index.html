@@ -19,21 +19,11 @@
             <div class="input-group">
                 <label for="textInput">Your text here:</label>
                 <input 
-                    <div class="mode-switch">
-                      <button onclick="setMode('cute')">Kawaii Mode</button>
-                      <button onclick="setMode('freaky')">Freaky Mode</button>
-                    </div>
-                    
-                    <div class="converter">
-                      <textarea id="inputText" placeholder="Enter your text here..." rows="4" cols="50"></textarea>
-                      <br>
-                      <button onclick="convertText()">Convert</button>
-                      <br>
-                      <textarea id="outputText" readonly rows="4" cols="50"></textarea>
-                    </div>
-
+                    type="text" 
+                    id="textInput" 
+                    placeholder="Start typing here..."
+                    autocomplete="off"
                 >
-                
             </div>
             
             <div class="output-group">
